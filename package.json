@@ -1,0 +1,37 @@
+{
+  "name": "my-emrktg",
+	"description": "EmDash starter for Cloudflare: a marketing site (block pages) plus a full blog at /blog, on one shared design system.",
+  "version": "0.0.3",
+  "repository": "github:hyasynth-ai/emdash-cms-template",
+  "private": true,
+  "type": "module",
+  "emdash": {
+    "seed": "seed/seed.json"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "astro build && wrangler deploy",
+    "typecheck": "astro check",
+    "migrate": "emdash migrate --from-config",
+    "migrate:status": "emdash migrate --from-config --status"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "14.4.4",
+    "@astrojs/react": "7.1.2",
+    "@emdash-cms/cloudflare": "1.4.0",
+    "@iconify-json/ph": "1.2.2",
+    "astro": "7.4.5",
+    "astro-iconset": "0.0.4",
+    "emdash": "1.4.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "@cloudflare/workers-types": "5.20261102.1",
+    "wrangler": "4.156.2"
+  },
+  "packageManager": "pnpm@11.9.0+sha512.bd682d5d03fe525ef7c9fd6780c6884d1e756ac4c9c9fe00c538782824310dcf90e3ddc4f53835f06dfaebd5085e41855e0bcbb3b60de2ac5bbab89e5036f03b"
+}

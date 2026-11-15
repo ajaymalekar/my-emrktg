@@ -1,0 +1,32 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "my-emrktg",
+	"main": "./src/worker.ts",
+	"compatibility_date": "2026-02-24",
+	"compatibility_flags": ["nodejs_compat"],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "my-emdashD1","database_id": "0868edb2-7787-4778-8d35-50855428e400",
+		},
+	],
+	"r2_buckets": [
+		{
+			"binding": "MEDIA",
+			"bucket_name": "my-emdash-media","preview_bucket_name": "my-emdash-media",
+		},
+	],
+	// Sandboxed plugins require Worker Loader, available on Workers paid plans. Uncomment to enable:
+	// "worker_loaders": [{ "binding": "LOADER" }],
+	// General maintenance cron trigger
+	"triggers": {
+		"crons": ["* * * * *"],
+	},
+	// Preview deploys (non-production branches) do not auto-provision bindings. To use them, create
+	// the resources once, then uncomment and fill in the ids (see README, "Preview deploys"):
+	// "previews": {
+	// 	"d1_databases": [{ "binding": "DB", "database_id": "<D1 id>" }],
+	// 	"r2_buckets": [{ "binding": "MEDIA", "bucket_name": "my-marketing-blog-media" }],
+	// 	"kv_namespaces": [{ "binding": "SESSION", "id": "<KV id>" }],
+	// },
+}
